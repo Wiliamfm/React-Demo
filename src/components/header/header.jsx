@@ -1,17 +1,17 @@
+import { Link } from "react-router-dom";
+
 function Header() {
    return <>
       <header className="header">
          <div className="header__inner">
-            <a data-test-id="header-logo" href="./index.html" className="header__logo">
-               Travel App
-            </a>
+            <Link to={"/"} className="header__logo" date-test-id="header-logo">Travel App</Link>
             <nav data-test-id="header-nav" className="header__nav">
                <ul className="nav-header__list">
                   <li className="nav-header__item" title="Bookings">
-                     <a data-test-id="header-bookings-link" href="./bookings.html" className="nav-header__inner">
+                     <Link data-test-id="header-bookings-link" to={"/bookings"} className="nav-header__inner">
                         <span className="visually-hidden">Bookings</span>
                         <img src="./assets/images/briefcase.svg" alt=" icon" />
-                     </a>
+                     </Link>
                   </li>
                   <li className="nav-header__item" title="Profile">
                      <div data-test-id="header-profile-nav" className="nav-header__inner profile-nav" tabIndex="0">
@@ -22,10 +22,9 @@ function Header() {
                               John Doe
                            </li>
                            <li className="profile-nav__item">
-                              <a data-test-id="header-profile-nav-sign-out" href="./sign-in.html"
-                                 className="profile-nav__sign-out button">
+                              <Link data-test-id="header-profile-nav-sign-out" to={"/sign-in"} className="profile-nav__sign-out button">
                                  Sign Out
-                              </a>
+                              </Link>
                            </li>
                         </ul>
                      </div>
