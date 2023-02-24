@@ -1,24 +1,39 @@
-function Trip() {
+import { ReactElement } from "react";
+import { trips as tripList, trips } from "../../data/data";
+
+
+function Trip({ trip }: {
+   trip: {
+      id: string,
+      title: string,
+      description: string,
+      level: string,
+      duration: number,
+      price: number,
+      image: string,
+      createdAt: string
+   }
+}) {
    return <li data-test-id="trip-card" className="trip-card">
-      <img data-test-id="trip-card-image" src="./assets/images/iceland.jpg" alt="trip image" />
+      <img data-test-id="trip-card-image" src={trip.image} alt="trip" />
       <div className="trip-card__content">
          <div className="trip-info">
             <h3 data-test-id="trip-card-title" className="trip-info__title">
-               Iceland
+               {trip.title}
             </h3>
             <div className="trip-info__content">
                <span data-test-id="trip-card-duration" className="trip-info__duration">
-                  <strong>15</strong> days
+                  <strong>{trip.duration}</strong> days
                </span>
                <span data-test-id="trip-card-level" className="trip-info__level">
-                  easy
+                  {trip.level}
                </span>
             </div>
          </div>
          <div className="trip-price">
             <span>Price</span>
             <strong data-test-id="trip-card-price-value" className="trip-price__value">
-               7000 $
+               {trip.price} $
             </strong>
          </div>
       </div>
@@ -28,11 +43,16 @@ function Trip() {
    </li>
 }
 
-function Trips() {
+function Trips({ trips }: { trips: typeof tripList }) {
+   const ts: ReactElement[] = [];
+   trips.forEach(trip => {
+      ts.push(<Trip trip={trip} key={trip.id} />)
+   });
+
    return <section className="trips">
       <h2 className="visually-hidden">Trips List</h2>
       <ul className="trip-list">
-         <Trip />
+         {ts}
       </ul>
    </section>
 }

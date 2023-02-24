@@ -4,6 +4,7 @@ import SingUp from "../sign_up/signUp";
 import SignIn from "../sign_in/signIn";
 import Search from "../search_bar/searchBar";
 import Trips from "../trips/trips";
+import { trips as TRIPS } from "../../data/data";
 
 const router = createBrowserRouter([
    {
@@ -31,14 +32,14 @@ const router = createBrowserRouter([
             path: "/",
             element: <main>
                <Search></Search>
-               <Trips></Trips>
+               <Trips trips={TRIPS}></Trips>
             </main>
          },
          {
             path: "*",
             element: <main>
                <Search></Search>
-               <Trips></Trips>
+               <Trips trips={TRIPS}></Trips>
             </main>
          }
       ]
