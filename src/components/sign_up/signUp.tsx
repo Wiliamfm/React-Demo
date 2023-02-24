@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PassThrough } from "stream";
 
 
 function SingUp() {
    const [password, setPassword] = React.useState("");
-   const [btnSubmit, setBtnSubmit] = React.useState(false);
 
    return (
       <main className="sign-up-page">
