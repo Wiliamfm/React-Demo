@@ -2,9 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
 import SingUp from "../sign_up/signUp";
 import SignIn from "../sign_in/signIn";
-import Search from "../search_bar/searchBar";
-import Trips from "../trips/trips";
-import { trips as TRIPS } from "../../data/data";
+import MainContent from "../main/main";
 
 const router = createBrowserRouter([
    {
@@ -30,17 +28,11 @@ const router = createBrowserRouter([
          },
          {
             path: "/",
-            element: <main>
-               <Search></Search>
-               <Trips trips={TRIPS}></Trips>
-            </main>
+            element: <MainContent />
          },
          {
             path: "*",
-            element: <main>
-               <Search></Search>
-               <Trips trips={TRIPS}></Trips>
-            </main>
+            element: <MainContent />
          }
       ]
    },
