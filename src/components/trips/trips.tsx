@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { trips as tripList, trips } from "../../data/data";
+import { trips as tripList } from "../../data/data";
 
 
 function Trip({ trip }: {
