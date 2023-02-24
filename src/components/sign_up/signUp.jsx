@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 function SingUp() {
-   return <>
+   return (
       <main className="sign-up-page">
          <h1 className="visually-hidden">Travel App</h1>
-         <form className="sign-up-form" autocomplete="off">
+         <form className="sign-up-form" autoComplete="off">
             <h2 className="sign-up-form__title">Sign Up</h2>
             <label className="input">
                <span className="input__heading">Full name</span>
@@ -25,7 +25,7 @@ function SingUp() {
                   data-test-id="auth-password"
                   name="password"
                   type="password"
-                  autocomplete="new-password"
+                  autoComplete="new-password"
                   required
                />
             </label>
@@ -42,7 +42,7 @@ function SingUp() {
             >Sign In</Link>
          </span>
       </main>
-   </>
+   );
 }
 
 export default SingUp;

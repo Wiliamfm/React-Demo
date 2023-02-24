@@ -1,7 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-   return <>
+   return (
       <header className="header">
          <div className="header__inner">
             <Link to={"/"} className="header__logo" date-test-id="header-logo">Travel App</Link>
@@ -14,7 +15,7 @@ function Header() {
                      </Link>
                   </li>
                   <li className="nav-header__item" title="Profile">
-                     <div data-test-id="header-profile-nav" className="nav-header__inner profile-nav" tabIndex="0">
+                     <div data-test-id="header-profile-nav" className="nav-header__inner profile-nav" tabIndex={0}>
                         <span className="visually-hidden">Profile</span>
                         <img src="./assets/images/user.svg" alt="profile icon" />
                         <ul data-test-id="header-profile-nav-list" className="profile-nav__list">
@@ -33,7 +34,7 @@ function Header() {
             </nav>
          </div>
       </header>
-   </>
+   );
 }
 
 export default Header;
